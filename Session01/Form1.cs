@@ -156,6 +156,29 @@ public partial class Form1 : Form
         }
     }
 
+
+    private double calcPattern(string txtA, string txtB, CalcOpEnum op)
+    {
+        var a = Convert.ToDouble(txtA);
+        var b = Convert.ToDouble(txtB);
+
+        /*
+         * Refactoring
+         * بهنیه کردن ساختار بدون تغییر در رفتار کد
+         */
+
+
+        //Pattern Maching
+
+        return op switch
+        {
+            CalcOpEnum.Add => a + b,
+            CalcOpEnum.Sub => a - b,
+            CalcOpEnum.Mul => a * b,
+            CalcOpEnum.Div => a / b,
+            _ => throw new ArgumentException("op not defined"),
+        };
+    }
     private double calc(string txtA, string txtB, CalcOpEnum op)
     {
         var a = Convert.ToDouble(txtA);
