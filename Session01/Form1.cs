@@ -113,25 +113,29 @@ public partial class Form1 : Form
 
     private void btnCalcAdd_Click(object sender, EventArgs e)
     {
-        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "+").ToString();
+        //txtCalcResult.Text = calc(txtA.Text, txtB.Text, "+").ToString();
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, CalcOpEnum.Add).ToString();
     }
 
     private void btnCalcSub_Click(object sender, EventArgs e)
     {
-        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "-").ToString();
+        //txtCalcResult.Text = calc(txtA.Text, txtB.Text, "-").ToString();
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, CalcOpEnum.Sub).ToString();
     }
 
     private void btnCalcMul_Click(object sender, EventArgs e)
     {
-        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "*").ToString();
+        //txtCalcResult.Text = calc(txtA.Text, txtB.Text, "*").ToString();
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, CalcOpEnum.Mul).ToString();
     }
 
     private void btnCalcDiv_Click(object sender, EventArgs e)
     {
-        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "/").ToString();
+        //txtCalcResult.Text = calc(txtA.Text, txtB.Text, "/").ToString();
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, CalcOpEnum.Div).ToString();
     }
 
-
+    //Overload kardan method
     private double calc(string txtA, string txtB, string op)
     {
         var a = Convert.ToDouble(txtA);
@@ -146,6 +150,26 @@ public partial class Form1 : Form
             case "*":
                 return a * b;
             case "/":
+                return a / b;
+            default:
+                throw new ArgumentException("op not defined");
+        }
+    }
+
+    private double calc(string txtA, string txtB, CalcOpEnum op)
+    {
+        var a = Convert.ToDouble(txtA);
+        var b = Convert.ToDouble(txtB);
+
+        switch (op)
+        {
+            case CalcOpEnum.Add:
+                return a + b;
+            case CalcOpEnum.Sub:
+                return a - b;
+            case CalcOpEnum.Mul:
+                return a * b;
+            case CalcOpEnum.Div:
                 return a / b;
             default:
                 throw new ArgumentException("op not defined");
