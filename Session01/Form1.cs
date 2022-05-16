@@ -1,4 +1,5 @@
 ﻿using Session01.Model;
+using Session01.UI;
 
 namespace Session01;
 
@@ -229,5 +230,17 @@ public partial class Form1 : Form
         }
 
         return result;
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnManageUsers_Click(object sender, EventArgs e)
+    {
+        var frm = new FormUsers();
+        //frm.Show();
+        frm.ShowDialog();
     }
 }
