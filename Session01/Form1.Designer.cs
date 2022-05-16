@@ -44,7 +44,7 @@
             this.btnCalcMul = new System.Windows.Forms.Button();
             this.btnCalcDiv = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCalcResult = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +107,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCalcResult);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnCalcDiv);
             this.panel2.Controls.Add(this.btnCalcMul);
@@ -162,6 +162,7 @@
             this.btnCalcAdd.TabIndex = 5;
             this.btnCalcAdd.Text = "+";
             this.btnCalcAdd.UseVisualStyleBackColor = true;
+            this.btnCalcAdd.Click += new System.EventHandler(this.btnCalcAdd_Click);
             // 
             // btnCalcSub
             // 
@@ -171,6 +172,7 @@
             this.btnCalcSub.TabIndex = 6;
             this.btnCalcSub.Text = "-";
             this.btnCalcSub.UseVisualStyleBackColor = true;
+            this.btnCalcSub.Click += new System.EventHandler(this.btnCalcSub_Click);
             // 
             // btnCalcMul
             // 
@@ -180,6 +182,7 @@
             this.btnCalcMul.TabIndex = 7;
             this.btnCalcMul.Text = "*";
             this.btnCalcMul.UseVisualStyleBackColor = true;
+            this.btnCalcMul.Click += new System.EventHandler(this.btnCalcMul_Click);
             // 
             // btnCalcDiv
             // 
@@ -189,6 +192,7 @@
             this.btnCalcDiv.TabIndex = 8;
             this.btnCalcDiv.Text = "/";
             this.btnCalcDiv.UseVisualStyleBackColor = true;
+            this.btnCalcDiv.Click += new System.EventHandler(this.btnCalcDiv_Click);
             // 
             // label4
             // 
@@ -199,13 +203,13 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Result";
             // 
-            // textBox1
+            // txtCalcResult
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(208, 23);
-            this.textBox1.TabIndex = 10;
+            this.txtCalcResult.Location = new System.Drawing.Point(56, 130);
+            this.txtCalcResult.Name = "txtCalcResult";
+            this.txtCalcResult.ReadOnly = true;
+            this.txtCalcResult.Size = new System.Drawing.Size(208, 23);
+            this.txtCalcResult.TabIndex = 10;
             // 
             // Form1
             // 
@@ -234,7 +238,7 @@
         private Label label1;
         private TextBox txtName;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox txtCalcResult;
         private Label label4;
         private Button btnCalcDiv;
         private Button btnCalcMul;

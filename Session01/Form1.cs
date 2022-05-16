@@ -106,11 +106,81 @@ public partial class Form1 : Form
             listBoxNames.Items.Add(txtName.Text);
         }
 
-        calc("100", "200", "+");
+        
     }
 
-    private void calc(string v1, string v2, string v3)
+    
+
+    private void btnCalcAdd_Click(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "+").ToString();
+    }
+
+    private void btnCalcSub_Click(object sender, EventArgs e)
+    {
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "-").ToString();
+    }
+
+    private void btnCalcMul_Click(object sender, EventArgs e)
+    {
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "*").ToString();
+    }
+
+    private void btnCalcDiv_Click(object sender, EventArgs e)
+    {
+        txtCalcResult.Text = calc(txtA.Text, txtB.Text, "/").ToString();
+    }
+
+
+    private double calc(string txtA, string txtB, string op)
+    {
+        var a = Convert.ToDouble(txtA);
+        var b = Convert.ToDouble(txtB);
+
+        switch (op)
+        {
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                return a / b;
+            default:
+                throw new ArgumentException("op not defined");
+        }
+    }
+
+    private double calcBreak(string txtA, string txtB, string op)
+    {
+        var a = Convert.ToDouble(txtA);
+        var b = Convert.ToDouble(txtB);
+        double result;
+
+        switch (op)
+        {
+            case "+":
+                result =  a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result =  a * b;
+                break;
+            case "/":
+                result = a * b;
+                break;
+
+            case "!":
+            case "%":
+                result = 0;
+                break;
+            default:
+                throw new ArgumentException("op not defined");
+        }
+
+        return result;
     }
 }
