@@ -82,6 +82,7 @@
             this.btnAddName.TabIndex = 2;
             this.btnAddName.Text = "Add";
             this.btnAddName.UseVisualStyleBackColor = true;
+            this.btnAddName.Click += new System.EventHandler(this.btnAddName_Click);
             // 
             // listBoxNames
             // 

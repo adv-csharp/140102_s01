@@ -98,4 +98,19 @@ public partial class Form1 : Form
 
 
     }
+
+    private void btnAddName_Click(object sender, EventArgs e)
+    {
+        if (!listBoxNames.Items.Contains(txtName.Text))
+        {
+            listBoxNames.Items.Add(txtName.Text);
+        }
+
+        calc("100", "200", "+");
+    }
+
+    private void calc(string v1, string v2, string v3)
+    {
+        throw new NotImplementedException();
+    }
 }
